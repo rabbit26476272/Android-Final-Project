@@ -1,0 +1,120 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+MERGED from [com.android.support:design:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/3e2e2e5730bf2daf3166c298bdff37d8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d299a7ef3a74fb09648f3160386d9239/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/anan/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/44ad30688589e2ce335c137b10578404/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/162d0decfcb89830fce69932a06fc296/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cc0e743b1384960dca51a597797a8a5c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/ec50449bdc0ecf85b1109dda63b8c4ed/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cde6973c5d42b94d77948fa451a8c805/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f08bae84d3508d42b9affe397d1494bc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/234538bba8713ffd1a445d32ddf39213/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b43446f6f437c5bbc7c24e7536ffbbf8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/08baafeeae7f4054a1b07b61b7845cb5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/797f39596c4a8015a900b8ed10500da0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aead8b902ff81314d25663d8773a7757/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a08654dce3052a4889c9d7a97d24ba2d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/71e499b7b7d3aa54ebbceca75d496a53/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/59d49dcecbcb9d2e551c6313f884007d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/ce0f6844216b0deb1d23d89b9cbfc202/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+	package
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:17:5-54
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:1-37:12
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:16:11-69
+application
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:19:5-35:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/anan/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/44ad30688589e2ce335c137b10578404/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/anan/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/44ad30688589e2ce335c137b10578404/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:22:9-41
+	android:icon
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:21:9-43
+	android:allowBackup
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:24:9-40
+activity#com.example.android.navdrawerexperiment.MainActivity
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:25:9-34:20
+	android:label
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:27:13-45
+	android:theme
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:26:13-80
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:29:13-33:29
+action#android.intent.action.MAIN
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml:32:27-74
+uses-sdk
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/3e2e2e5730bf2daf3166c298bdff37d8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/3e2e2e5730bf2daf3166c298bdff37d8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d299a7ef3a74fb09648f3160386d9239/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d299a7ef3a74fb09648f3160386d9239/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/anan/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/44ad30688589e2ce335c137b10578404/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/anan/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/44ad30688589e2ce335c137b10578404/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/162d0decfcb89830fce69932a06fc296/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/162d0decfcb89830fce69932a06fc296/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cc0e743b1384960dca51a597797a8a5c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/cc0e743b1384960dca51a597797a8a5c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/ec50449bdc0ecf85b1109dda63b8c4ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/ec50449bdc0ecf85b1109dda63b8c4ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cde6973c5d42b94d77948fa451a8c805/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cde6973c5d42b94d77948fa451a8c805/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f08bae84d3508d42b9affe397d1494bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/f08bae84d3508d42b9affe397d1494bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/234538bba8713ffd1a445d32ddf39213/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/234538bba8713ffd1a445d32ddf39213/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b43446f6f437c5bbc7c24e7536ffbbf8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b43446f6f437c5bbc7c24e7536ffbbf8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/08baafeeae7f4054a1b07b61b7845cb5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/08baafeeae7f4054a1b07b61b7845cb5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/797f39596c4a8015a900b8ed10500da0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/797f39596c4a8015a900b8ed10500da0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aead8b902ff81314d25663d8773a7757/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/anan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/aead8b902ff81314d25663d8773a7757/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a08654dce3052a4889c9d7a97d24ba2d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a08654dce3052a4889c9d7a97d24ba2d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/71e499b7b7d3aa54ebbceca75d496a53/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/71e499b7b7d3aa54ebbceca75d496a53/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/59d49dcecbcb9d2e551c6313f884007d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/59d49dcecbcb9d2e551c6313f884007d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/ce0f6844216b0deb1d23d89b9cbfc202/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/anan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/ce0f6844216b0deb1d23d89b9cbfc202/AndroidManifest.xml:20:5-44
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		ADDED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anan/Desktop/inclass/108-2 android/Android Final Project/NavDrawerExperiment/app/src/main/AndroidManifest.xml
