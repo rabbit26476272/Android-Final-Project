@@ -1,0 +1,4 @@
+#Tue Jun 02 14:18:31 CST 2020
+base.0=/Users/anan/Desktop/inclass/108-2 android/android-fundamentals-apps-v2-master/MaterialMe/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
