@@ -1,4 +1,0 @@
-#Sat Jun 06 21:40:21 CST 2020
-base.0=/Users/anan/Desktop/inclass/108-2 android/Android Final Project/DroidCafeWithSettingsChallenge/app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
