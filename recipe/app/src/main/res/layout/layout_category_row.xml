@@ -47,6 +47,7 @@
                     android:maxLines="2"
                     android:padding="10dp"
                     android:text="aaa"
+                    android:typeface="monospace"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 

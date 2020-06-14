@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
-                app:fontFamily="sans-serif-light" />
+                android:typeface="monospace"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -54,7 +55,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/white"
                 android:textSize="34sp"
-                app:fontFamily="sans-serif-light" />
+                android:typeface="monospace" />
 
             <View
                 android:layout_width="120dp"
@@ -80,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Developer"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                    android:typeface="monospace" />
 
                 <View
                     android:id="@+id/view2"
@@ -91,7 +92,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="資工二 107590015 謝安怡"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textSize="26sp"
+                    android:typeface="monospace"
                     android:textColor="@android:color/white" />
 
                 <View
@@ -104,7 +106,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="資工二 107590042 崔元煜"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textSize="26sp"
+                    android:typeface="monospace"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>

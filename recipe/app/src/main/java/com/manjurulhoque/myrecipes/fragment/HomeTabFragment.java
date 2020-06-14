@@ -47,6 +47,7 @@ public class HomeTabFragment extends Fragment {
                 int[] tabIcons = {
                         R.drawable.recipe,
                         R.drawable.spoon,
+                        R.drawable.countdown
                 };
                 for(int i=0; i< tabLayout.getTabCount(); i++){
                     if(tabLayout.getTabAt(i) != null){
@@ -55,6 +56,7 @@ public class HomeTabFragment extends Fragment {
                 }
                 tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
                 tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+                tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
             }
         });
 
@@ -71,11 +73,19 @@ public class HomeTabFragment extends Fragment {
                         toolbar.setTitle("RECIPES");
                         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
                         tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+                        tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
                         break;
                     case 1:
                         toolbar.setTitle("CATEGORIES");
                         tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
                         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+                        tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+                        break;
+                    case 2:
+                        toolbar.setTitle("COUNTDOWN TIMER");
+                        tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+                        tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+                        tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
                         break;
                 }
             }

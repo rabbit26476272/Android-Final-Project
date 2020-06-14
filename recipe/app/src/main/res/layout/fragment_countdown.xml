@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
+
+            <EditText
+                android:id="@+id/editText_min"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="MIN"
+                android:typeface="monospace"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:inputType="time"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=":"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/editText_sec"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="SEC"
+                android:typeface="monospace"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:inputType="time"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:layout_centerVertical="false"
+            android:text="00:00"
+            android:typeface="monospace"
+            android:textColor="@android:color/black"
+            android:textSize="60sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button_reset"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/text_view_countdown"
+                android:layout_toEndOf="@+id/button_start_pause"
+                android:background="@drawable/button_blue"
+                android:text="reset"
+                android:typeface="monospace"
+                android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/button_start_pause"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/text_view_countdown"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_red"
+                android:text="start"
+                android:typeface="monospace"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

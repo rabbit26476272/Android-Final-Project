@@ -46,6 +46,7 @@
                 android:gravity="center"
                 android:paddingBottom="20dp"
                 android:text="Hello"
+                android:typeface="monospace"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

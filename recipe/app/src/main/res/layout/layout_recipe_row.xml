@@ -42,9 +42,9 @@
                 android:background="@drawable/drawer_top_gradient"
                 android:gravity="bottom|center"
                 android:text="aaa"
+                android:typeface="monospace"
                 android:layout_margin="5dp"
                 android:textColor="@color/white"
-                style="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="18sp" />
 
         </RelativeLayout>
