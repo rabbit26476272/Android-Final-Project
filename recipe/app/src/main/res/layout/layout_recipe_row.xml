@@ -22,10 +22,11 @@
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.manjurulhoque.myrecipes.SquareImageView
                 android:id="@+id/news_image"
+                app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -37,13 +38,14 @@
             <TextView
                 android:id="@+id/news_title"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_alignBottom="@+id/news_image"
                 android:background="@drawable/drawer_top_gradient"
                 android:gravity="bottom|center"
                 android:text="aaa"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:typeface="monospace"
-                android:layout_margin="5dp"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 

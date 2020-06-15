@@ -1,22 +1,29 @@
 package com.manjurulhoque.myrecipes.fragment;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,45 +55,69 @@ public class CountdownFragment extends Fragment {
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
     private Button mButtonReset;
-    private  NumberPicker mNumberPickerMin;
-    private  NumberPicker mNumberPickerSec;
     private CountDownTimer mCountDownTimer;
-    private LinearLayout mLinearLayout;
-    private TextView mTextViewHint;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     private int min = 0;
     private int sec = 0;
     private ProgressBar mProgressBar;
     private boolean mPause = false;
-
-    
+    private NumberPicker mNumberPickerMin;
+    private NumberPicker mNumberPickerSec;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_countdown, container, false);
         mTextViewCountDown = v.findViewById(R.id.text_view_countdown);
         mButtonStartPause = v.findViewById(R.id.button_start_pause);
-        mLinearLayout = v.findViewById(R.id.linerLayout_setTime);
         mButtonReset = v.findViewById(R.id.button_reset);
-        mNumberPickerMin = v.findViewById(R.id.picker_min);
-        mNumberPickerSec = v.findViewById(R.id.picker_sec);
-        mTextViewHint = v.findViewById(R.id.textView_hint);
         mProgressBar = v.findViewById(R.id.circular_progress_bar);
 
 
-        mNumberPickerMin.setMinValue(0);
-        mNumberPickerMin.setMaxValue(59);
-        mNumberPickerMin.setValue(0); // 設定預設位置
-        mNumberPickerMin.setWrapSelectorWheel(true); // 是否循環顯示
-        mNumberPickerMin.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
-        mNumberPickerSec.setMinValue(0);
-        mNumberPickerSec.setMaxValue(59);
-        mNumberPickerSec.setValue(0); // 設定預設位置
-        mNumberPickerSec.setWrapSelectorWheel(true); // 是否循環顯示
-        mNumberPickerSec.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        mTextViewCountDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Drawable drawable = getResources().getDrawable(R.drawable.countdown);
+                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+                Drawable newdrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 60, 60, true));
+                newdrawable.setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP);
+                LayoutInflater inflater = LayoutInflater.from(getActivity());
 
+
+
+
+                final View popView = inflater.inflate(R.layout.dialog_settime,null);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+                        .setIcon(newdrawable)
+                        .setTitle("Set Time")
+                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setNegativeButton("cancel",null);
+
+                builder.setView(popView);
+                mNumberPickerMin = popView.findViewById(R.id.picker_min);
+                mNumberPickerSec = popView.findViewById(R.id.picker_sec);
+
+                mNumberPickerMin.setMinValue(0);
+                mNumberPickerMin.setMaxValue(59);
+                mNumberPickerMin.setValue(0); // 設定預設位置
+                mNumberPickerMin.setWrapSelectorWheel(true); // 是否循環顯示
+                mNumberPickerMin.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+
+                mNumberPickerSec.setMinValue(0);
+                mNumberPickerSec.setMaxValue(59);
+                mNumberPickerSec.setValue(0); // 設定預設位置
+                mNumberPickerSec.setWrapSelectorWheel(true); // 是否循環顯示
+                mNumberPickerSec.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+                final AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,17 +127,19 @@ public class CountdownFragment extends Fragment {
                 } else {
                     if(mPause == false)
                     {
+
                         min = mNumberPickerMin.getValue();
                         sec = mNumberPickerSec.getValue();
                         if(min == 0 && sec == 0)
                         {
-                            Toast.makeText(getActivity(),"Please set the time",Toast.LENGTH_SHORT).show();
+
+                            Toast toast = Toast.makeText(getActivity(),"Please set the time",Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
                         }
                         else
                         {
                             int time = 60000 * min + 1000 * sec;
-                            mTextViewHint.setText("START");
-                            mLinearLayout.setVisibility(View.INVISIBLE);
                             mTimeLeftInMillis = time;
                             mProgressBar.setVisibility(View.VISIBLE);
                             mProgressBar.setProgress(0);
@@ -150,11 +183,14 @@ public class CountdownFragment extends Fragment {
                 mButtonStartPause.setText("Start");
                 mButtonStartPause.setVisibility(View.INVISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
-                mTextViewHint.setText("END");
                 mTextViewCountDown.setText("00:00");
                 mProgressBar.setProgress(100);
                 mProgressBar.setVisibility(View.INVISIBLE);
                 mTextViewCountDown.setText("00:00");
+
+                Toast toast = Toast.makeText(getActivity(),"End Countdown",Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         }.start();
         mTimerRunning = true;
@@ -166,7 +202,6 @@ public class CountdownFragment extends Fragment {
         mTimerRunning = false;
         mButtonStartPause.setText("Start");
         mButtonReset.setVisibility(View.VISIBLE);
-        mTextViewHint.setText("PAUSE");
     }
     private void resetTimer() {
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
@@ -174,8 +209,8 @@ public class CountdownFragment extends Fragment {
         mPause = false;
         mButtonReset.setVisibility(View.INVISIBLE);
         mButtonStartPause.setVisibility(View.VISIBLE);
-        mLinearLayout.setVisibility(View.VISIBLE);
-        mTextViewHint.setText("SET TIME");
+        //mLinearLayout.setVisibility(View.VISIBLE);
+        //mTextViewHint.setText("SET TIME");
         mProgressBar.setProgress(0);
     }
     private void updateCountDownText() {

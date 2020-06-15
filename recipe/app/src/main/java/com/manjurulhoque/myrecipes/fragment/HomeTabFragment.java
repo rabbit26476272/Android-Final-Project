@@ -1,7 +1,10 @@
 package com.manjurulhoque.myrecipes.fragment;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -60,6 +63,8 @@ public class HomeTabFragment extends Fragment {
             }
         });
 
+
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -68,6 +73,11 @@ public class HomeTabFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
+                Drawable drawable = getResources().getDrawable(R.drawable.recipe);
+                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+                Drawable newdrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 60, 60, true));
+                newdrawable.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+                toolbar.setNavigationIcon(newdrawable);
                 switch (position) {
                     case 0:
                         toolbar.setTitle("RECIPES");

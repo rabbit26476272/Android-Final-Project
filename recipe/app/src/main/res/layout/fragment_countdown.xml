@@ -13,91 +13,42 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/textView_top"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ffcbcb"/>
 
         <TextView
-            android:id="@+id/textView_hint"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorPink"
-            android:text="Set Time"
-            android:textColor="#bb596b"
-            android:textSize="20sp"
-            android:gravity="center_horizontal"/>
-
-        <LinearLayout
-            android:id="@+id/linerLayout_setTime"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:background="@color/colorPink"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
-
-
-            <NumberPicker
-                android:theme="@style/NumberPickerText"
-                android:id="@+id/picker_min"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:descendantFocusability="blocksDescendants"/>
-
-
-            <TextView
-                android:id="@+id/textView_dot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <NumberPicker
-                android:theme="@style/NumberPickerText"
-                android:id="@+id/picker_sec"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:descendantFocusability="blocksDescendants"/>
-        </LinearLayout>
-
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
             android:orientation="vertical"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
 
             <TextView
                 android:id="@+id/text_view_countdown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:text="00:00"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"
+                android:textSize="40sp"
+                android:gravity="center"
                 android:typeface="monospace" />
 
             <ProgressBar
                 android:id="@+id/circular_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:indeterminate="false"
                 android:progressDrawable="@drawable/circular"
                 android:visibility="visible" />
         </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,8 +57,8 @@
 
             <Button
                 android:id="@+id/button_reset"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_margin="10dp"
                 android:layout_below="@+id/text_view_countdown"
                 android:layout_toEndOf="@+id/button_start_pause"
@@ -117,8 +68,8 @@
                 android:textColor="#FFFFFF" />
             <Button
                 android:id="@+id/button_start_pause"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_margin="10dp"
                 android:layout_below="@+id/text_view_countdown"
                 android:layout_centerHorizontal="true"
