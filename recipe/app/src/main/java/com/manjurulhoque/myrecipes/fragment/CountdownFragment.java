@@ -91,14 +91,14 @@ public class CountdownFragment extends Fragment {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                         .setIcon(newdrawable)
                         .setTitle("Set Time")
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 min = mNumberPickerMin.getValue();
                                 sec = mNumberPickerSec.getValue();
                             }
                         })
-                        .setNegativeButton("cancel",null);
+                        .setNegativeButton("CANCEL",null);
 
                 builder.setView(popView);
                 mNumberPickerMin = popView.findViewById(R.id.picker_min);
@@ -116,6 +116,14 @@ public class CountdownFragment extends Fragment {
                 mNumberPickerSec.setWrapSelectorWheel(true); // 是否循環顯示
                 mNumberPickerSec.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
                 final AlertDialog dialog = builder.create();
+
+                dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+                    @Override
+                    public void onShow(DialogInterface arg0) {
+                        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#ff5722"));
+                        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.parseColor("#ff5722"));
+                    }
+                });
                 dialog.show();
 
             }
@@ -131,7 +139,6 @@ public class CountdownFragment extends Fragment {
                     {
                         if(min == 0 && sec == 0)
                         {
-
                             Toast toast = Toast.makeText(getActivity(),"Please set the time",Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
@@ -144,9 +151,7 @@ public class CountdownFragment extends Fragment {
                             mProgressBar.setProgress(0);
                             mProgressBar.setMax(time);
                             startTimer();
-
                         }
-
                     }
                     else
                     {
@@ -163,6 +168,7 @@ public class CountdownFragment extends Fragment {
             }
         });
         updateCountDownText();
+        mTextViewCountDown.setText("00:00");
         return v;
     }
 
@@ -186,7 +192,6 @@ public class CountdownFragment extends Fragment {
                 mTextViewCountDown.setText("00:00");
                 mProgressBar.setProgress(100);
                 mProgressBar.setVisibility(View.INVISIBLE);
-                mTextViewCountDown.setText("00:00");
 
                 Toast toast = Toast.makeText(getActivity(),"End Countdown",Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
@@ -209,8 +214,7 @@ public class CountdownFragment extends Fragment {
         mPause = false;
         mButtonReset.setVisibility(View.INVISIBLE);
         mButtonStartPause.setVisibility(View.VISIBLE);
-        //mLinearLayout.setVisibility(View.VISIBLE);
-        //mTextViewHint.setText("SET TIME");
+        mTextViewCountDown.setText("00:00");
         mProgressBar.setProgress(0);
     }
     private void updateCountDownText() {
