@@ -94,7 +94,8 @@ public class CountdownFragment extends Fragment {
                         .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
+                                min = mNumberPickerMin.getValue();
+                                sec = mNumberPickerSec.getValue();
                             }
                         })
                         .setNegativeButton("cancel",null);
@@ -116,6 +117,7 @@ public class CountdownFragment extends Fragment {
                 mNumberPickerSec.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
                 final AlertDialog dialog = builder.create();
                 dialog.show();
+
             }
         });
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
@@ -127,9 +129,6 @@ public class CountdownFragment extends Fragment {
                 } else {
                     if(mPause == false)
                     {
-
-                        min = mNumberPickerMin.getValue();
-                        sec = mNumberPickerSec.getValue();
                         if(min == 0 && sec == 0)
                         {
 
@@ -147,6 +146,7 @@ public class CountdownFragment extends Fragment {
                             startTimer();
 
                         }
+
                     }
                     else
                     {
