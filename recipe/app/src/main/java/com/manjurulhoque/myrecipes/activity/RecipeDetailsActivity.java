@@ -89,9 +89,9 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (favouriteDbHelper.addData(recipe)) {
-                    Toast.makeText(getApplicationContext(), "Favourited", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "已加入最愛", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Something wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "變心了？", Toast.LENGTH_SHORT).show();
                 }
             }
         });

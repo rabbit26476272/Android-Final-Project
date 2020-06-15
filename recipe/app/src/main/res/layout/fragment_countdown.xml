@@ -11,61 +11,93 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView_top"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#ffcbcb"/>
+
+        <TextView
+            android:id="@+id/textView_hint"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPink"
+            android:text="Set Time"
+            android:textColor="#bb596b"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/linerLayout_setTime"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorPink"
             android:orientation="horizontal"
-            android:layout_marginBottom="30dp">
+            android:gravity="center_horizontal">
 
-            <EditText
-                android:id="@+id/editText_min"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="MIN"
-                android:typeface="monospace"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:inputType="time"
-                android:textSize="24sp" />
+
+            <NumberPicker
+                android:theme="@style/NumberPickerText"
+                android:id="@+id/picker_min"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:descendantFocusability="blocksDescendants"/>
+
 
             <TextView
                 android:id="@+id/textView_dot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text=":"
-                android:textStyle="bold"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editText_sec"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="SEC"
-                android:typeface="monospace"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:inputType="time"
-                android:textSize="24sp" />
+            <NumberPicker
+                android:theme="@style/NumberPickerText"
+                android:id="@+id/picker_sec"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:descendantFocusability="blocksDescendants"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_view_countdown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="false"
-            android:layout_centerVertical="false"
-            android:text="00:00"
-            android:typeface="monospace"
-            android:textColor="@android:color/black"
-            android:textSize="60sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/text_view_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="00:00"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:typeface="monospace" />
+
+            <ProgressBar
+                android:id="@+id/circular_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/circular"
+                android:visibility="visible" />
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,8 +106,8 @@
 
             <Button
                 android:id="@+id/button_reset"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:layout_below="@+id/text_view_countdown"
                 android:layout_toEndOf="@+id/button_start_pause"
@@ -85,8 +117,8 @@
                 android:textColor="#FFFFFF" />
             <Button
                 android:id="@+id/button_start_pause"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:layout_below="@+id/text_view_countdown"
                 android:layout_centerHorizontal="true"
