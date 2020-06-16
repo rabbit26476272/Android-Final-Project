@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="資工二 107590015 謝安怡"
-                    android:textSize="26sp"
+                    android:textSize="20sp"
                     android:typeface="monospace"
                     android:textColor="@android:color/white" />
 
@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="資工二 107590042 崔元煜"
-                    android:textSize="26sp"
+                    android:textSize="20sp"
                     android:typeface="monospace"
                     android:textColor="@android:color/white" />
 

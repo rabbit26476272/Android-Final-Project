@@ -7,6 +7,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,25 +29,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.manjurulhoque.myrecipes.R;
-import com.manjurulhoque.myrecipes.activity.MainActivity;
-import com.manjurulhoque.myrecipes.dbhelper.FavouriteDbHelper;
-
-import org.w3c.dom.Text;
-
-import java.util.Calendar;
 import java.util.Locale;
-
-import static android.content.Context.MODE_PRIVATE;
-import static android.support.v4.content.ContextCompat.getSystemService;
-import static java.lang.Thread.sleep;
 
 public class CountdownFragment extends Fragment {
 
@@ -64,6 +53,16 @@ public class CountdownFragment extends Fragment {
     private boolean mPause = false;
     private NumberPicker mNumberPickerMin;
     private NumberPicker mNumberPickerSec;
+
+    private static final String ACTION_UPDATE_NOTIFICATION =
+            "com.android.example.notifyme.ACTION_UPDATE_NOTIFICATION";
+    // Notification channel ID.
+    private static final String PRIMARY_CHANNEL_ID =
+            "primary_notification_channel";
+    private NotificationManager mNotifyManager;
+    private static final int NOTIFICATION_ID = 0;
+    //private NotificationReceiver mReceiver = new NotificationReceiver();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -74,7 +73,6 @@ public class CountdownFragment extends Fragment {
         mProgressBar = v.findViewById(R.id.circular_progress_bar);
 
 
-
         mTextViewCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,9 +81,6 @@ public class CountdownFragment extends Fragment {
                 Drawable newdrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 60, 60, true));
                 newdrawable.setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP);
                 LayoutInflater inflater = LayoutInflater.from(getActivity());
-
-
-
 
                 final View popView = inflater.inflate(R.layout.dialog_settime,null);
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
@@ -151,6 +146,7 @@ public class CountdownFragment extends Fragment {
                             mProgressBar.setProgress(0);
                             mProgressBar.setMax(time);
                             startTimer();
+                            //startService(time);
                         }
                     }
                     else
@@ -171,8 +167,6 @@ public class CountdownFragment extends Fragment {
         mTextViewCountDown.setText("00:00");
         return v;
     }
-
-
 
     private void startTimer() {
 
