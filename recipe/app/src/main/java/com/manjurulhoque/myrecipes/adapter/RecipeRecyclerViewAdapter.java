@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -48,7 +49,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
                 .error(android.R.drawable.gallery_thumb)
                 .into(holder.image);
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, RecipeDetailsActivity.class);
@@ -67,14 +68,14 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
 
         public ImageView image;
         public TextView title;
-        public RelativeLayout relativeLayout;
+        public LinearLayout linearLayout;
 
         public ViewHolder(View view) {
             super(view);
 
             title = view.findViewById(R.id.news_title);
             image = view.findViewById(R.id.news_image);
-            relativeLayout = view.findViewById(R.id.relativeLayout);
+            linearLayout = view.findViewById(R.id.linearLayout);
         }
     }
 }

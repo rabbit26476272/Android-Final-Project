@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#8ac6d1</color>
     <color name="colorPrimaryDark">#204051</color>
-    <color name="colorAccent">#f6eedf</color>
+    <color name="colorAccent">#faeee7</color>
     <color name="tabTextColor">#ffffff</color>
     <color name="tabSelectedTextColor">#ffffff</color>
     <color name="tabIndicatorColor">#ffe3ed</color>
@@ -10,8 +10,8 @@
     <color name="white">#ffffff</color>
     <color name="colorPink">#f6eedf</color>
     <color name="colorPurple">#f6def6</color>
-    <color name="orange">#beebe9</color>
-    <color name="green">#fffdf9</color>
-    <color name="blue">#ffe3ed</color>
-    <color name="red">#8ac6d1</color>
+    <color name="orange">#ffb367</color>
+    <color name="green">#d1eaa3</color>
+    <color name="blue">#8ac6d1</color>
+    <color name="red">#fa9191</color>
 </resources>
