@@ -25,7 +25,7 @@
         app:tabIconTintMode="add"
         app:tabIndicatorColor="@color/tabIndicatorColor"
         app:tabSelectedTextColor="@color/tabSelectedTextColor"
-        app:tabTextColor="@color/tabTextColor" />
+        app:tabTextColor="@color/tabTextColor"/>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/tab_appbar_layout"
