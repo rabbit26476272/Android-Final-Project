@@ -1,7 +1,9 @@
 package com.manjurulhoque.myrecipes.fragment;
 
+import android.accessibilityservice.AccessibilityService;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -35,7 +37,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.manjurulhoque.myrecipes.R;
+import com.manjurulhoque.myrecipes.activity.MainActivity;
+
 import java.util.Locale;
+
 
 public class CountdownFragment extends Fragment {
 
@@ -59,9 +64,9 @@ public class CountdownFragment extends Fragment {
     // Notification channel ID.
     private static final String PRIMARY_CHANNEL_ID =
             "primary_notification_channel";
-    private NotificationManager mNotifyManager;
     private static final int NOTIFICATION_ID = 0;
-    //private NotificationReceiver mReceiver = new NotificationReceiver();
+    private NotificationManager mNotifyManager;
+
 
     @Nullable
     @Override
@@ -73,6 +78,7 @@ public class CountdownFragment extends Fragment {
         mProgressBar = v.findViewById(R.id.circular_progress_bar);
 
 
+        createNotificationChannel();
         mTextViewCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +132,7 @@ public class CountdownFragment extends Fragment {
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (mTimerRunning) {
                     pauseTimer();
                     mPause = true;
@@ -186,10 +193,7 @@ public class CountdownFragment extends Fragment {
                 mTextViewCountDown.setText("00:00");
                 mProgressBar.setProgress(100);
                 mProgressBar.setVisibility(View.INVISIBLE);
-
-                Toast toast = Toast.makeText(getActivity(),"End Countdown",Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                sendNotification();
             }
         }.start();
         mTimerRunning = true;
@@ -239,5 +243,72 @@ public class CountdownFragment extends Fragment {
         {
             Toast.makeText(getActivity(), "COUNTDOWN " + (d / 1000) / 60 + "m " + (d / 1000) % 60 + "s",Toast.LENGTH_SHORT).show();
         }
+    }
+    public void sendNotification() {
+
+        // Sets up the pending intent to update the notification.
+        // Corresponds to a press of the Update Me! button.
+        Intent updateIntent = new Intent(ACTION_UPDATE_NOTIFICATION);
+        PendingIntent updatePendingIntent = PendingIntent.getBroadcast(getActivity(),
+                NOTIFICATION_ID, updateIntent, PendingIntent.FLAG_ONE_SHOT);
+
+        // Build the notification with all of the parameters using helper
+        // method.
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+
+        // Add the action button using the pending intent.
+        notifyBuilder.addAction(R.drawable.rabbit,
+                "from recipe", updatePendingIntent);
+
+        // Deliver the notification.
+        mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+
+        // Enable the update and cancel buttons but disables the "Notify
+        // Me!" button.
+    }
+    public void createNotificationChannel() {
+        // Create a notification manager object.
+        mNotifyManager =
+                (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        // Notification channels are only available in OREO and higher.
+        // So, add a check on SDK version.
+        if (android.os.Build.VERSION.SDK_INT >=
+                android.os.Build.VERSION_CODES.O) {
+
+            // Create the NotificationChannel with all the parameters.
+            NotificationChannel notificationChannel = new NotificationChannel
+                    (PRIMARY_CHANNEL_ID,
+                            "test",
+                            NotificationManager.IMPORTANCE_HIGH);
+
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setDescription
+                    ("test2");
+
+            mNotifyManager.createNotificationChannel(notificationChannel);
+        }
+    }
+    private NotificationCompat.Builder getNotificationBuilder() {
+
+        // Set up the pending intent that is delivered when the notification
+        // is clicked.
+        Intent notificationIntent = new Intent(getActivity(), MainActivity.class);
+        PendingIntent notificationPendingIntent = PendingIntent.getActivity
+                (getActivity(), NOTIFICATION_ID, notificationIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // Build the notification with all of the parameters.
+        NotificationCompat.Builder notifyBuilder = new NotificationCompat
+                .Builder(getActivity(), PRIMARY_CHANNEL_ID)
+                .setContentTitle(getString(R.string.notification_title))
+                .setContentText(getString(R.string.notification_text))
+                .setSmallIcon(R.drawable.rabbit)
+                .setAutoCancel(true).setContentIntent(notificationPendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setDefaults(NotificationCompat.DEFAULT_ALL);
+        return notifyBuilder;
     }
 }

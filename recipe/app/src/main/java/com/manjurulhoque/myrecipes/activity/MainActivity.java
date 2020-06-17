@@ -1,5 +1,7 @@
 package com.manjurulhoque.myrecipes.activity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +24,6 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

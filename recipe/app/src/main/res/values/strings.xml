@@ -7,8 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="notification_title">時間到囉</string>
-    <string name="notification_text">測試</string>
+    <string name="notification_title">倒數計時器</string>
+    <string name="notification_text">時間到囉！</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
