@@ -20,6 +20,8 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
@@ -66,7 +68,7 @@ public class CountdownFragment extends Fragment {
             "primary_notification_channel";
     private static final int NOTIFICATION_ID = 0;
     private NotificationManager mNotifyManager;
-
+    long[] vibrate = {0,100,200,300};
 
     @Nullable
     @Override
@@ -224,26 +226,6 @@ public class CountdownFragment extends Fragment {
         mTextViewCountDown.setText(timeLeftFormatted);
 
     }
-
-
-    public void startService(int duration)
-    {
-        int d = duration;
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("Timer", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("duration", d);
-        editor.apply();
-        Intent intent = new Intent(getActivity(),MyService.class);
-        getActivity().startService(intent);
-        if((d / 1000) / 60 == 0)
-        {
-            Toast.makeText(getActivity(), "COUNTDOWN " + (d / 1000) % 60 + "s",Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            Toast.makeText(getActivity(), "COUNTDOWN " + (d / 1000) / 60 + "m " + (d / 1000) % 60 + "s",Toast.LENGTH_SHORT).show();
-        }
-    }
     public void sendNotification() {
 
         // Sets up the pending intent to update the notification.
@@ -300,6 +282,7 @@ public class CountdownFragment extends Fragment {
                 (getActivity(), NOTIFICATION_ID, notificationIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
+        Uri soundUri = Uri.parse("android.resource://" +  getActivity().getApplicationContext().getPackageName() + "/" + R.raw.sound);
         // Build the notification with all of the parameters.
         NotificationCompat.Builder notifyBuilder = new NotificationCompat
                 .Builder(getActivity(), PRIMARY_CHANNEL_ID)
@@ -308,7 +291,9 @@ public class CountdownFragment extends Fragment {
                 .setSmallIcon(R.drawable.rabbit)
                 .setAutoCancel(true).setContentIntent(notificationPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setDefaults(NotificationCompat.DEFAULT_ALL);
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setVibrate(vibrate)
+                .setSound(soundUri);
         return notifyBuilder;
     }
 }
