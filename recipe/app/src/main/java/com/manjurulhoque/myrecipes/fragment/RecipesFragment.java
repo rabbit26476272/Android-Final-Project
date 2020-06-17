@@ -1,9 +1,12 @@
 package com.manjurulhoque.myrecipes.fragment;
 
 import android.app.ProgressDialog;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -41,7 +44,8 @@ public class RecipesFragment extends Fragment {
     List<Recipe> recipes = new ArrayList<Recipe>();
     private DatabaseReference databaseReference;
     private ProgressDialog progressDialog;
-    private FavouriteDbHelper favouriteDbHelper;
+    private FloatingActionButton mfabAddRecipe;
+    //private FavouriteDbHelper favouriteDbHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,7 +65,12 @@ public class RecipesFragment extends Fragment {
         getRecipes();
 
         initRecyclerView(view);
+        mfabAddRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         return view;
     }
 
@@ -107,6 +116,11 @@ public class RecipesFragment extends Fragment {
 
         recipeRecyclerViewAdapter = new RecipeRecyclerViewAdapter(getActivity(), recipes);
         recyclerView.setAdapter(recipeRecyclerViewAdapter);
+
+        mfabAddRecipe = v.findViewById(R.id.fab_addRecipe);
+        Drawable icon = getResources().getDrawable(R.drawable.plus);
+        icon.setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
+        mfabAddRecipe.setImageDrawable(icon);
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -129,42 +143,44 @@ public class RecipesFragment extends Fragment {
                 }
             }
         });
+        /*
+       searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextChange(String newText) {
 
-//        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                int textLength = newText.length();
-//                recipes.clear();
-//
-//                for (int i = 0; i < str_title.length; i++) {
-//                    if (textLength <= str_title[i].length()) {
-//                        if (str_title[i].toLowerCase().contains(newText.toLowerCase())) {
-//
-//                            ItemRecipesList objItem = new ItemRecipesList();
-//
-//                            objItem.setCategoryName((str_cat_name[i]));
-//                            objItem.setCatId(str_cat_id[i]);
-//                            objItem.setCId(str_cid[i]);
-//                            objItem.setNewsDate(str_date[i]);
-//                            objItem.setNewsDescription(str_desc[i]);
-//                            objItem.setNewsHeading(str_title[i]);
-//                            objItem.setNewsImage(str_image[i]);
-//                            arrayItemRecipesList.add(objItem);
-//                        }
-//                    }
-//                }
-//
-//                setAdapterToRecyclerView();
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//
-//                return true;
-//            }
-//        });
+                int textLength = newText.length();
+                recipes.clear();
+
+                for (int i = 0; i < str_title.length; i++) {
+                    if (textLength <= str_title[i].length()) {
+                        if (str_title[i].toLowerCase().contains(newText.toLowerCase())) {
+
+                            ItemRecipesList objItem = new ItemRecipesList();
+
+                            objItem.setCategoryName((str_cat_name[i]));
+                            objItem.setCatId(str_cat_id[i]);
+                            objItem.setCId(str_cid[i]);
+                            objItem.setNewsDate(str_date[i]);
+                            objItem.setNewsDescription(str_desc[i]);
+                            objItem.setNewsHeading(str_title[i]);
+                            objItem.setNewsImage(str_image[i]);
+                            arrayItemRecipesList.add(objItem);
+                        }
+                    }
+                }
+
+                setAdapterToRecyclerView();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return true;
+            }
+       });
+
+         */
     }
 
     @Override
