@@ -20,10 +20,10 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".activity.RecipeDetailsActivity"/>
+        <activity android:name=".activity.RecipeDetailsActivity"/>
         <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.RecipesByCategoryActivity"></activity>
+        <activity android:name=".activity.AddRecipeActivity" />
+        <activity android:name=".activity.RecipesByCategoryActivity"/>
     </application>
 
 </manifest>

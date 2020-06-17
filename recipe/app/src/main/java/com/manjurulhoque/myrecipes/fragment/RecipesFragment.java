@@ -1,6 +1,7 @@
 package com.manjurulhoque.myrecipes.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.manjurulhoque.myrecipes.R;
+import com.manjurulhoque.myrecipes.activity.AboutActivity;
+import com.manjurulhoque.myrecipes.activity.AddRecipeActivity;
 import com.manjurulhoque.myrecipes.adapter.RecipeRecyclerViewAdapter;
 import com.manjurulhoque.myrecipes.dbhelper.FavouriteDbHelper;
 import com.manjurulhoque.myrecipes.model.Recipe;
@@ -68,7 +71,7 @@ public class RecipesFragment extends Fragment {
         mfabAddRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getActivity(), AddRecipeActivity.class));
             }
         });
         return view;
