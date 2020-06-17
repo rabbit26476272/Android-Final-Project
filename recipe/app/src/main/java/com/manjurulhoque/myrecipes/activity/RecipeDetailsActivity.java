@@ -89,10 +89,12 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (favouriteDbHelper.addData(recipe)) {
+                    floatingActionButton.setImageResource(R.drawable.ic_favorited);
                     Toast.makeText(getApplicationContext(), "已加入最愛", Toast.LENGTH_SHORT).show();
                 } else {
+                    floatingActionButton.setImageResource(R.drawable.ic_favorite);
                     favouriteDbHelper.deleteById(recipe.getKey());
-                    Toast.makeText(getApplicationContext(), "變心了？", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "已取消最愛", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -7,13 +7,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.manjurulhoque.myrecipes.R;
 import com.manjurulhoque.myrecipes.activity.RecipeDetailsActivity;
+import com.manjurulhoque.myrecipes.dbhelper.FavouriteDbHelper;
 import com.manjurulhoque.myrecipes.model.Recipe;
 import com.squareup.picasso.Picasso;
 
@@ -25,12 +28,12 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
     private List<Recipe> mRecipes;
     private Context mContext;
     private Recipe recipe;
+    private FavouriteDbHelper favouriteDbHelper;
 
     public RecipeRecyclerViewAdapter(Context context, List<Recipe> recipes) {
         this.mContext = context;
         this.mRecipes = recipes;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,6 +60,13 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
                 mContext.startActivity(intent);
             }
         });
+
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addFavorite(recipe);
+            }
+        });
     }
 
     @Override
@@ -69,6 +79,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
         public ImageView image;
         public TextView title;
         public LinearLayout linearLayout;
+        public ImageButton imageButton;
 
         public ViewHolder(View view) {
             super(view);
@@ -76,6 +87,20 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
             title = view.findViewById(R.id.news_title);
             image = view.findViewById(R.id.news_image);
             linearLayout = view.findViewById(R.id.linearLayout);
+            imageButton = view.findViewById(R.id.imageButton_favorite);
         }
+    }
+    public void addFavorite(Recipe mRecipes){
+        Toast.makeText(mContext.getApplicationContext(), mRecipes.getKey(), Toast.LENGTH_SHORT).show();
+        //favouriteDbHelper.addData(mRecipes);
+        /*
+        if (favouriteDbHelper.addData(mRecipes)) {
+            Toast.makeText(mContext.getApplicationContext(), "已加入最愛", Toast.LENGTH_SHORT).show();
+        } else {
+            favouriteDbHelper.deleteById(mRecipes.getKey());
+            Toast.makeText(mContext.getApplicationContext(), "已取消最愛", Toast.LENGTH_SHORT).show();
+        }
+
+         */
     }
 }

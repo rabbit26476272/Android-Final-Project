@@ -26,8 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.manjurulhoque.myrecipes.R;
-import com.manjurulhoque.myrecipes.adapter.CategoryRecyclerViewAdapter;
 import com.manjurulhoque.myrecipes.adapter.RecipeRecyclerViewAdapter;
+import com.manjurulhoque.myrecipes.dbhelper.FavouriteDbHelper;
 import com.manjurulhoque.myrecipes.model.Recipe;
 
 import java.util.ArrayList;
@@ -38,10 +38,10 @@ public class RecipesFragment extends Fragment {
     RecyclerView recyclerView;
     SwipeRefreshLayout swipeRefreshLayout = null;
     RecipeRecyclerViewAdapter recipeRecyclerViewAdapter;
-    private RelativeLayout relativeLayout;
     List<Recipe> recipes = new ArrayList<Recipe>();
     private DatabaseReference databaseReference;
     private ProgressDialog progressDialog;
+    private FavouriteDbHelper favouriteDbHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

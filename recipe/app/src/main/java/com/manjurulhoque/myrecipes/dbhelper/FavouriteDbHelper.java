@@ -78,7 +78,6 @@ public class FavouriteDbHelper extends SQLiteOpenHelper {
                 cursor.close();
                 return false;
             }
-
             cursor.close();
         } catch (Exception e) {
             Log.d("FavouriteDbHelper", e.getMessage());

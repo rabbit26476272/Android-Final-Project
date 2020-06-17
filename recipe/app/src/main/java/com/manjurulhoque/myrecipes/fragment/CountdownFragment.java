@@ -70,7 +70,7 @@ public class CountdownFragment extends Fragment {
     private static final int NOTIFICATION_ID = 0;
     private NotificationManager mNotifyManager;
     long[] vibrate = {0,100,200,300};
-    private int maxVolume = 50;
+    private int maxVolume = 100;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
