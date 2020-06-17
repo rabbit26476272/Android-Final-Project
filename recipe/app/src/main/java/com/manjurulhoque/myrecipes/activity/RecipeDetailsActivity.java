@@ -91,6 +91,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                 if (favouriteDbHelper.addData(recipe)) {
                     Toast.makeText(getApplicationContext(), "已加入最愛", Toast.LENGTH_SHORT).show();
                 } else {
+                    favouriteDbHelper.deleteById(recipe.getKey());
                     Toast.makeText(getApplicationContext(), "變心了？", Toast.LENGTH_SHORT).show();
                 }
             }
