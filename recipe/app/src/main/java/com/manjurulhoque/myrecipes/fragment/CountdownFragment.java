@@ -20,6 +20,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -69,7 +70,7 @@ public class CountdownFragment extends Fragment {
     private static final int NOTIFICATION_ID = 0;
     private NotificationManager mNotifyManager;
     long[] vibrate = {0,100,200,300};
-
+    private int maxVolume = 50;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -196,6 +197,10 @@ public class CountdownFragment extends Fragment {
                 mProgressBar.setProgress(100);
                 mProgressBar.setVisibility(View.INVISIBLE);
                 sendNotification();
+                MediaPlayer coffin = MediaPlayer.create(getContext(), R.raw.sound);
+                float log1 = (float)(Math.log(maxVolume - 0) / Math.log(maxVolume));
+                coffin.setVolume(log1, log1); //set volume takes two paramater
+                coffin.start();
             }
         }.start();
         mTimerRunning = true;
@@ -282,7 +287,6 @@ public class CountdownFragment extends Fragment {
                 (getActivity(), NOTIFICATION_ID, notificationIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Uri soundUri = Uri.parse("android.resource://" +  getActivity().getApplicationContext().getPackageName() + "/" + R.raw.sound);
         // Build the notification with all of the parameters.
         NotificationCompat.Builder notifyBuilder = new NotificationCompat
                 .Builder(getActivity(), PRIMARY_CHANNEL_ID)
@@ -291,9 +295,8 @@ public class CountdownFragment extends Fragment {
                 .setSmallIcon(R.drawable.rabbit)
                 .setAutoCancel(true).setContentIntent(notificationPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setVibrate(vibrate)
-                .setSound(soundUri);
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setVibrate(vibrate);
         return notifyBuilder;
     }
 }
