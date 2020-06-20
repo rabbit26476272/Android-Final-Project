@@ -32,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.manjurulhoque.myrecipes.R;
 import com.manjurulhoque.myrecipes.activity.AddRecipeActivity;
 import com.manjurulhoque.myrecipes.adapter.RecipeRecyclerViewAdapter;
-import com.manjurulhoque.myrecipes.dbhelper.FavouriteDbHelper;
 import com.manjurulhoque.myrecipes.model.Recipe;
 
 import java.util.ArrayList;
@@ -47,7 +46,6 @@ public class RecipesFragment extends Fragment {
     private DatabaseReference databaseReference;
     private ProgressDialog progressDialog;
     private FloatingActionButton mfabAddRecipe;
-    private FavouriteDbHelper favouriteDbHelper;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +112,6 @@ public class RecipesFragment extends Fragment {
 
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        favouriteDbHelper = new FavouriteDbHelper(getActivity());
         recipeRecyclerViewAdapter = new RecipeRecyclerViewAdapter(getActivity(), recipes);
         recyclerView.setAdapter(recipeRecyclerViewAdapter);
 

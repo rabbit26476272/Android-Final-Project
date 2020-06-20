@@ -1,6 +1,11 @@
 package com.manjurulhoque.myrecipes.activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -16,7 +21,17 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.manjurulhoque.myrecipes.R;
+import com.manjurulhoque.myrecipes.adapter.RecipeRecyclerViewAdapter;
+import com.manjurulhoque.myrecipes.model.Recipe;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddRecipeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private EditText mEditRecipe;
@@ -34,6 +49,7 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
         initData();
         initToolbar();
         initSpinner();
+        final Intent intent = new Intent();
         mButtonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,13 +69,18 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
                 else
                     mImageViewPrepare.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
                 if(contentRecipe.length() != 0 && contentIngredients.length() != 0 && contentPrepare.length() != 0)
+                {
                     Toast.makeText(getApplicationContext(),"已新增食譜",Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
                 else
                     Toast.makeText(getApplicationContext(),"食譜未填寫完整",Toast.LENGTH_SHORT).show();
             }
         });
 
     }
+
     private void initData() {
         mEditRecipe = findViewById(R.id.editRecipe);
         mEditIngredients = findViewById(R.id.editIngredients);
