@@ -35,7 +35,6 @@ public class FavoriteFragment extends Fragment {
 
     RecyclerView recyclerView;
     FavoriteRecyclerViewAdapter favoriteRecyclerViewAdapter;
-    private RelativeLayout relativeLayout;
     List<Recipe> favorites = new ArrayList<Recipe>();
     private MainActivity mainActivity;
     private Toolbar toolbar;

@@ -1,7 +1,4 @@
 package com.manjurulhoque.myrecipes.activity;
-
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.manjurulhoque.myrecipes.R;
-import com.manjurulhoque.myrecipes.model.Recipe;
 
 public class AddRecipeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private EditText mEditRecipe;
@@ -45,18 +41,18 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
                 String contentIngredients = mEditIngredients.getText().toString();
                 String contentPrepare = mEditPrepare.getText().toString();
                 if(contentRecipe.length() == 0)
-                    mImageViewRecipe.setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+                    mImageViewRecipe.setColorFilter(getResources().getColor(R.color.redDark), PorterDuff.Mode.SRC_ATOP);
                 else
                     mImageViewRecipe.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
                 if(contentIngredients.length() == 0)
-                    mImageViewIngredients.setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+                    mImageViewIngredients.setColorFilter(getResources().getColor(R.color.redDark), PorterDuff.Mode.SRC_ATOP);
                 else
                     mImageViewIngredients.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
                 if(contentPrepare.length() == 0)
-                    mImageViewPrepare.setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+                    mImageViewPrepare.setColorFilter(getResources().getColor(R.color.redDark), PorterDuff.Mode.SRC_ATOP);
                 else
                     mImageViewPrepare.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
-                if(contentRecipe.length() != 0 || contentIngredients.length() != 0 || contentPrepare.length() != 0)
+                if(contentRecipe.length() != 0 && contentIngredients.length() != 0 && contentPrepare.length() != 0)
                     Toast.makeText(getApplicationContext(),"已新增食譜",Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(getApplicationContext(),"食譜未填寫完整",Toast.LENGTH_SHORT).show();

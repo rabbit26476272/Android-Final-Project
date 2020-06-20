@@ -33,12 +33,13 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
     public RecipeRecyclerViewAdapter(Context context, List<Recipe> recipes) {
         this.mContext = context;
         this.mRecipes = recipes;
+        this.favouriteDbHelper = new FavouriteDbHelper(mContext.getApplicationContext());
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_recipe_row, parent, false);
-
+        //favouriteDbHelper = new FavouriteDbHelper(mContext.getApplicationContext());
         return new ViewHolder(itemView);
     }
 
@@ -91,16 +92,12 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
         }
     }
     public void addFavorite(Recipe mRecipes){
-        Toast.makeText(mContext.getApplicationContext(), mRecipes.getKey(), Toast.LENGTH_SHORT).show();
-        //favouriteDbHelper.addData(mRecipes);
-        /*
+        //Toast.makeText(mContext.getApplicationContext(), mRecipes.getKey(), Toast.LENGTH_SHORT).show();
         if (favouriteDbHelper.addData(mRecipes)) {
             Toast.makeText(mContext.getApplicationContext(), "已加入最愛", Toast.LENGTH_SHORT).show();
         } else {
             favouriteDbHelper.deleteById(mRecipes.getKey());
             Toast.makeText(mContext.getApplicationContext(), "已取消最愛", Toast.LENGTH_SHORT).show();
         }
-
-         */
     }
 }

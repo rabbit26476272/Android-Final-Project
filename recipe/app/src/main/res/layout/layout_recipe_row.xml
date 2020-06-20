@@ -62,9 +62,10 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_favorite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     app:srcCompat="@drawable/ic_favorited"
+                    android:background="@drawable/button"
                     android:layout_margin="5dp"/>
 
                 <TextView
