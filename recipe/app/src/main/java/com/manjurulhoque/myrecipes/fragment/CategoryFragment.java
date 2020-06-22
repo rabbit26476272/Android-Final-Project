@@ -94,4 +94,5 @@ public class CategoryFragment extends Fragment {
         categoryRecyclerViewAdapter = new CategoryRecyclerViewAdapter(getActivity(), categories);
         recyclerView.setAdapter(categoryRecyclerViewAdapter);
     }
+
 }

@@ -39,28 +39,4 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_favorite" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="45dp"
-            android:text="No Favorite"
-            android:textSize="16sp"
-            android:typeface="monospace"/>
-
-    </LinearLayout>
-
 </LinearLayout>

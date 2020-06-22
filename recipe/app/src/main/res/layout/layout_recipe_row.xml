@@ -75,7 +75,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center_vertical|left"
-                    android:text="aaa"
+                    android:text="recipe name"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp"
                     android:typeface="monospace" />

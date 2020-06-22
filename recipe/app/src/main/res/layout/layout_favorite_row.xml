@@ -42,13 +42,16 @@
                 android:layout_alignTop="@id/news_image"
                 android:layout_alignRight="@id/news_image"
                 android:layout_alignBottom="@id/news_image"
-                android:layout_margin="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
                 android:gravity="center"
                 android:paddingBottom="20dp"
-                android:text="Hello"
-                android:typeface="monospace"
+                android:text="Favorite"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
         </RelativeLayout>
 

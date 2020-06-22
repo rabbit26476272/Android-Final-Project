@@ -176,7 +176,7 @@
         android:layout_height="30dp"
         android:text="Create"
         android:textColor="@color/white"
-        android:background="@drawable/button_background"
+        android:background="@drawable/button_create"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
