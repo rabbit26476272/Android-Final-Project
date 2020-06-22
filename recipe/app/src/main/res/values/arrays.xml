@@ -3,9 +3,8 @@
     <string-array name="labels_array">
         <item>Meat</item>
         <item>Vegetarian</item>
-        <item>Bengali</item>
-        <item>Healthy Recipes</item>
-        <item>Drinks</item>
         <item>Lunch</item>
+        <item>Healthy Recipes</item>
+        <item>Drinks</item>]
     </string-array>
 </resources>
