@@ -24,6 +24,10 @@
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_about"
                 android:title="About" />
+            <item
+                android:id="@+id/nav_professor"
+                android:icon="@drawable/professor"
+                android:title="Professor" />
         </menu>
     </item>
 

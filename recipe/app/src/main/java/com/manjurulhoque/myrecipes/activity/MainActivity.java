@@ -3,6 +3,7 @@ package com.manjurulhoque.myrecipes.activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -98,10 +99,16 @@ public class MainActivity extends AppCompatActivity
                     new FavoriteFragment(), "FavoriteFragment").commit();
         } else if (id == R.id.nav_share) {
             Intent sendIntent = new Intent();
+
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out my app at: https://play.google.com/");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Android Final Project Recipe");
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
+        }else if (id == R.id.nav_professor) {
+
+            Uri uri = Uri.parse("https://myweb.ntut.edu.tw/~cliu/");
+            Intent it  = new Intent(Intent.ACTION_VIEW,uri);
+            startActivity(it);
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
