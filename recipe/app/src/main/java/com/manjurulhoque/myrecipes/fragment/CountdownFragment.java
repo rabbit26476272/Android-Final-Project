@@ -80,7 +80,7 @@ public class CountdownFragment extends Fragment {
         mButtonReset = v.findViewById(R.id.button_reset);
         mProgressBar = v.findViewById(R.id.circular_progress_bar);
 
-
+        mButtonReset.setVisibility(View.INVISIBLE);
         createNotificationChannel();
         mTextViewCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +129,7 @@ public class CountdownFragment extends Fragment {
                     }
                 });
                 dialog.show();
+                mButtonReset.setVisibility(View.VISIBLE);
 
             }
         });
@@ -191,7 +192,7 @@ public class CountdownFragment extends Fragment {
                 mTimerRunning = false;
                 mPause = false;
                 mButtonStartPause.setText("Start");
-                mButtonStartPause.setVisibility(View.INVISIBLE);
+                mButtonStartPause.setVisibility(View.VISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
                 mTextViewCountDown.setText("00:00");
                 mProgressBar.setProgress(100);
