@@ -58,7 +58,6 @@ public class RecipesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_recipes, container, false);
 
         progressDialog = new ProgressDialog(getContext());
-
         databaseReference = FirebaseDatabase.getInstance().getReference().child("categories");
 
         getRecipes();
@@ -84,13 +83,15 @@ public class RecipesFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     for (DataSnapshot snapshot1 : snapshot.child("recipes").getChildren()) {
-                        Recipe recipe = new Recipe(snapshot1.getKey(), snapshot1.child("name").getValue().toString(),
-                                snapshot1.child("direction").getValue().toString(), snapshot1.child("ingredients").getValue().toString(), snapshot1.child("image").getValue().toString());
+                        Recipe recipe = new Recipe(snapshot1.getKey(),
+                                snapshot1.child("name").getValue().toString(),
+                                snapshot1.child("direction").getValue().toString(),
+                                snapshot1.child("ingredients").getValue().toString(),
+                                snapshot1.child("image").getValue().toString());
 
                         recipes.add(recipe);
                     }
                 }
-
                 recipeRecyclerViewAdapter.notifyDataSetChanged();
                 progressDialog.dismiss();
             }
@@ -112,6 +113,7 @@ public class RecipesFragment extends Fragment {
 
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
         recipeRecyclerViewAdapter = new RecipeRecyclerViewAdapter(getActivity(), recipes);
         recyclerView.setAdapter(recipeRecyclerViewAdapter);
 

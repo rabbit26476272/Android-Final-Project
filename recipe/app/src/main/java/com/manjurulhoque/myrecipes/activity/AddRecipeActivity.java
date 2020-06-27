@@ -1,8 +1,10 @@
 package com.manjurulhoque.myrecipes.activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -41,7 +43,7 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
     private ImageView mImageViewRecipe;
     private ImageView mImageViewIngredients;
     private ImageView mImageViewPrepare;
-
+    public SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,7 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
         initSpinner();
         final Intent intent = new Intent();
         mButtonCreate.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 String contentRecipe = mEditRecipe.getText().toString();
@@ -73,6 +76,7 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
                     Toast.makeText(getApplicationContext(),"已新增食譜",Toast.LENGTH_SHORT).show();
                     setResult(RESULT_OK, intent);
                     finish();
+
                 }
                 else
                     Toast.makeText(getApplicationContext(),"食譜未填寫完整",Toast.LENGTH_SHORT).show();
@@ -80,7 +84,6 @@ public class AddRecipeActivity extends AppCompatActivity implements AdapterView.
         });
 
     }
-
     private void initData() {
         mEditRecipe = findViewById(R.id.editRecipe);
         mEditIngredients = findViewById(R.id.editIngredients);

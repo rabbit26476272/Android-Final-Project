@@ -7,6 +7,7 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.manjurulhoque.myrecipes.model.Recipe;
 
@@ -72,6 +73,7 @@ public class FavouriteDbHelper extends SQLiteOpenHelper {
     public boolean checkIfExists(Recipe recipe) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE + " WHERE id = " + recipe.getKey();
+
         try {
             Cursor cursor = db.rawQuery(query, null);
             if (cursor.getCount() <= 0) {

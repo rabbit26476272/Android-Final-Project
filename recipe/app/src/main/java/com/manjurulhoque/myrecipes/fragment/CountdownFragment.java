@@ -1,28 +1,17 @@
 package com.manjurulhoque.myrecipes.fragment;
-
-import android.accessibilityservice.AccessibilityService;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
@@ -103,8 +92,8 @@ public class CountdownFragment extends Fragment {
                             }
                         })
                         .setNegativeButton("CANCEL",null);
-
                 builder.setView(popView);
+
                 mNumberPickerMin = popView.findViewById(R.id.picker_min);
                 mNumberPickerSec = popView.findViewById(R.id.picker_sec);
 

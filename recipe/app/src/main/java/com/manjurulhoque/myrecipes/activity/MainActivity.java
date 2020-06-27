@@ -99,12 +99,11 @@ public class MainActivity extends AppCompatActivity
                     new FavoriteFragment(), "FavoriteFragment").commit();
         } else if (id == R.id.nav_share) {
             Intent sendIntent = new Intent();
-
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, "Android Final Project Recipe");
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
-        }else if (id == R.id.nav_professor) {
+        } else if (id == R.id.nav_professor) {
 
             Uri uri = Uri.parse("https://myweb.ntut.edu.tw/~cliu/");
             Intent it  = new Intent(Intent.ACTION_VIEW,uri);

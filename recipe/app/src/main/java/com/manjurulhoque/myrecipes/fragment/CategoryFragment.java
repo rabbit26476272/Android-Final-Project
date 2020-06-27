@@ -58,16 +58,15 @@ public class CategoryFragment extends Fragment {
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
         progressDialog.show();
-
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Category category = new Category(snapshot.getKey(), snapshot.child("name").getValue().toString(), snapshot.child("image").getValue().toString());
-
+                    Category category = new Category(snapshot.getKey(),
+                            snapshot.child("name").getValue().toString(),
+                            snapshot.child("image").getValue().toString());
                     categories.add(category);
                 }
-
                 categoryRecyclerViewAdapter.notifyDataSetChanged();
                 progressDialog.dismiss();
             }

@@ -52,7 +52,7 @@ public class HomeTabFragment extends Fragment {
                         R.drawable.spoon,
                         R.drawable.countdown
                 };
-                for(int i=0; i< tabLayout.getTabCount(); i++){
+                for(int i = 0; i < tabLayout.getTabCount(); i++){
                     if(tabLayout.getTabAt(i) != null){
                         tabLayout.getTabAt(i).setIcon(tabIcons[i]);
                     }
